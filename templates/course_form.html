@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurs Qo'shish</title>
+</head>
+<body>
+    <h1>Kurs Qo'shish</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="name">Kurs nomi:</label><br>
+        <input type="text" id="name" name="name"><br>
+
+        <label for="description">Tavsif:</label><br>
+        <textarea id="description" name="description"></textarea><br>
+
+        <label for="duration">Davomiyligi (soat):</label><br>
+        <input type="number" id="duration" name="duration"><br>
+
+        <label for="instructor">O'qituvchi:</label><br>
+        <select id="instructor" name="instructor_id">
+            {% for instructor in instructors %}
+                <option value="{{ instructor.id }}">{{ instructor.name }}</option>
+            {% endfor %}
+        </select><br>
+
+        <input type="submit" value="Saqlash">
+    </form>
+</body>
+</html>

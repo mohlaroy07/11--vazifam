@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O'qituvchi Qo'shish</title>
+</head>
+<body>
+    <h1>O'qituvchi Qo'shish</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="name">O'qituvchi nomi:</label><br>
+        <input type="text" id="name" name="name"><br>
+
+        <label for="bio">O'qituvchi haqida ma'lumot:</label><br>
+        <textarea id="bio" name="bio"></textarea><br>
+
+        <input type="submit" value="Saqlash">
+    </form>
+</body>
+</html>
